@@ -91,14 +91,16 @@ app.UseSwaggerUI(c =>
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "API de clientes v1");
 });
 
-app.UseEndpoints(endpoinsts =>
-{
-    endpoinsts.MapControllers();
-});
+
 
 app.UseAuthentication();
 
 app.UseAuthorization();
+
+app.UseEndpoints(endpoinsts =>
+{
+    endpoinsts.MapControllers();
+});
 
 app.MapControllers();
 
