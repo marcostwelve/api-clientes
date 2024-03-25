@@ -26,6 +26,12 @@ namespace clientes.Controllers
             _config = config;
         }
 
+        /// <summary>
+        /// Realiza o registro de um usuário
+        /// </summary>
+        /// <param name="usuario">Dados Usuário</param>
+        /// <returns></returns>
+
         [HttpPost("registrar")]
 
         public async Task<ActionResult> RegistrarUsuario(UsuarioDTO usuario)
@@ -60,6 +66,12 @@ namespace clientes.Controllers
             return Ok(GerarToken(usuario));
         }
 
+        /// <summary>
+        /// Realiza o login para o usuário e gera um token de acesso
+        /// </summary>
+        /// <param name="dadosUsuario"></param>
+        /// <returns>Token de acesso</returns>
+
         [HttpPost("login")]
 
         public async Task<ActionResult> Login(UsuarioDTO dadosUsuario)
@@ -81,6 +93,12 @@ namespace clientes.Controllers
                 return BadRequest(ModelState);
             }
         }
+
+        /// <summary>
+        /// Gera token de acesso ao usuário
+        /// </summary>
+        /// <param name="dadosUsuario">Usuário</param>
+        /// <returns>Token de usuário</returns>
 
         private UsuarioToken GerarToken(UsuarioDTO dadosUsuario)
         {

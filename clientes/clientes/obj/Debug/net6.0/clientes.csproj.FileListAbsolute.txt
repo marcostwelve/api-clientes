@@ -75,3 +75,6 @@ C:\Users\marco\Downloads\Projetos\C#\clientesCadastro\clientes\clientes\bin\Debu
 C:\Users\marco\Downloads\Projetos\C#\clientesCadastro\clientes\clientes\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\marco\Downloads\Projetos\C#\clientesCadastro\clientes\clientes\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\marco\Downloads\Projetos\C#\clientesCadastro\clientes\clientes\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\marco\Downloads\Projetos\C#\clientesCadastro\clientes\clientes\obj\Debug\net6.0\clientes.sourcelink.json
+C:\Users\marco\Downloads\Projetos\C#\clientesCadastro\clientes\clientes\bin\Debug\net6.0\clientes.xml
+C:\Users\marco\Downloads\Projetos\C#\clientesCadastro\clientes\clientes\obj\Debug\net6.0\clientes.xml

@@ -23,6 +23,12 @@ namespace clientes.Controllers
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Retorna todos os logradouros cadastrados
+        /// </summary>
+        /// <param name="logradouroParametros">Dados da Paginação</param>
+        /// <returns>Lista de Logradouros</returns>
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<LogradouroDTO>>> PegarTodosOsLogradouros([FromQuery] LogradouroParametros logradouroParametros)
         {
@@ -51,6 +57,12 @@ namespace clientes.Controllers
             }
         }
 
+        /// <summary>
+        /// Retorna um logradouro por ID
+        /// </summary>
+        /// <param name="id">Id Logradouro</param>
+        /// <returns>Logradouro</returns>
+
         [HttpGet("{id}")]
         public async Task<ActionResult<LogradouroDTO>> PegarLogradouroPorId(int id) 
         {
@@ -70,6 +82,12 @@ namespace clientes.Controllers
             }
         }
 
+        /// <summary>
+        /// Cadastra um logradouro na base de dados
+        /// </summary>
+        /// <param name="logradouroDto">Logradouro</param>
+        /// <returns>Logradouro cadastrado</returns>
+
         [HttpPost]
         public async Task<ActionResult<LogradouroDTO>> CadastrarLogradouro(LogradouroDTO logradouroDto)
         {
@@ -87,6 +105,13 @@ namespace clientes.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Ocorreu um erro ao tratar a sua solicitação {ex.Message}");
             }
         }
+
+        /// <summary>
+        /// Atualiza um logradouro através do seu ID
+        /// </summary>
+        /// <param name="id">Id Logradouro</param>
+        /// <param name="logradouroDto"></param>
+        /// <returns>Logradouro atualizado</returns>
 
         [HttpPut("{id}")]
         public async Task<ActionResult> AtualizarLogradouro(int id, LogradouroDTO logradouroDto)
@@ -111,6 +136,13 @@ namespace clientes.Controllers
             }
 
         }
+
+
+        /// <summary>
+        /// Deleta um logradouro, através do seu ID
+        /// </summary>
+        /// <param name="id">Id Logradouro</param>
+        /// <returns></returns>
 
         [HttpDelete("{id}")]
 

@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>clientes</name>
+    </assembly>
+    <members>
+        <member name="M:clientes.Controllers.AutenticacaoController.RegistrarUsuario(clientes.DTO_s.UsuarioDTO)">
+            <summary>
+            Realiza o registro de um usuário
+            </summary>
+            <param name="usuario">Dados Usuário</param>
+            <returns></returns>
+        </member>
+        <member name="M:clientes.Controllers.AutenticacaoController.Login(clientes.DTO_s.UsuarioDTO)">
+            <summary>
+            Realiza o login para o usuário e gera um token de acesso
+            </summary>
+            <param name="dadosUsuario"></param>
+            <returns>Token de acesso</returns>
+        </member>
+        <member name="M:clientes.Controllers.AutenticacaoController.GerarToken(clientes.DTO_s.UsuarioDTO)">
+            <summary>
+            Gera token de acesso ao usuário
+            </summary>
+            <param name="dadosUsuario">Usuário</param>
+            <returns>Token de usuário</returns>
+        </member>
+        <member name="M:clientes.Controllers.ClienteController.ListarTodosClientes(clientes.Paginacao.ClienteParametros)">
+            <summary>
+            Retorna todos os clientes
+            </summary>
+            <param name="clienteParametros"></param>
+            <returns>Lista de Clientes</returns>
+        </member>
+        <member name="M:clientes.Controllers.ClienteController.ListarClientePorId(System.Int32)">
+            <summary>
+            Retorna um cliente através do ID declarado
+            </summary>
+            <param name="id">id do Cliente</param>
+            <returns>Cliente</returns>
+        </member>
+        <member name="M:clientes.Controllers.ClienteController.GetClientesLogradouros">
+            <summary>
+            Retorna todos os clientes com os logradouros cadastrados
+            </summary>
+            <returns>Clientes e Logradouros</returns>
+        </member>
+        <member name="M:clientes.Controllers.ClienteController.CadastrarCliente(clientes.DTO_s.ClienteDTO)">
+            <summary>
+            Cadastra um cliente
+            </summary>
+            <param name="clienteDto">Dados do Cliente</param>
+            <returns>Cliente cadastrado</returns>
+        </member>
+        <member name="M:clientes.Controllers.ClienteController.AtualizarCliente(System.Int32,clientes.DTO_s.ClienteDTO)">
+            <summary>
+            Atualiza um cliente cadastrado, através do seu ID
+            </summary>
+            <param name="id">Id Cliente</param>
+            <param name="clienteDto">Dados do cliente a serem atualizadod</param>
+            <returns>Cliente com dados atualizados</returns>
+        </member>
+        <member name="M:clientes.Controllers.ClienteController.DeletarCliente(System.Int32)">
+            <summary>
+            Deleta um cliente da base de dados, através do seu ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:clientes.Controllers.LogradouroController.PegarTodosOsLogradouros(clientes.Paginacao.LogradouroParametros)">
+            <summary>
+            Retorna todos os logradouros cadastrados
+            </summary>
+            <param name="logradouroParametros">Dados da Paginação</param>
+            <returns>Lista de Logradouros</returns>
+        </member>
+        <member name="M:clientes.Controllers.LogradouroController.PegarLogradouroPorId(System.Int32)">
+            <summary>
+            Retorna um logradouro por ID
+            </summary>
+            <param name="id">Id Logradouro</param>
+            <returns>Logradouro</returns>
+        </member>
+        <member name="M:clientes.Controllers.LogradouroController.CadastrarLogradouro(clientes.DTO_s.LogradouroDTO)">
+            <summary>
+            Cadastra um logradouro na base de dados
+            </summary>
+            <param name="logradouroDto">Logradouro</param>
+            <returns>Logradouro cadastrado</returns>
+        </member>
+        <member name="M:clientes.Controllers.LogradouroController.AtualizarLogradouro(System.Int32,clientes.DTO_s.LogradouroDTO)">
+            <summary>
+            Atualiza um logradouro através do seu ID
+            </summary>
+            <param name="id">Id Logradouro</param>
+            <param name="logradouroDto"></param>
+            <returns>Logradouro atualizado</returns>
+        </member>
+        <member name="M:clientes.Controllers.LogradouroController.DeletarLogradouro(System.Int32)">
+            <summary>
+            Deleta um logradouro, através do seu ID
+            </summary>
+            <param name="id">Id Logradouro</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

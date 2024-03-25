@@ -25,6 +25,12 @@ namespace clientes.Controllers
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Retorna todos os clientes
+        /// </summary>
+        /// <param name="clienteParametros"></param>
+        /// <returns>Lista de Clientes</returns>
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ClienteDTO>>> ListarTodosClientes([FromQuery] ClienteParametros clienteParametros)
         {
@@ -52,6 +58,12 @@ namespace clientes.Controllers
             }
         }
 
+        /// <summary>
+        /// Retorna um cliente através do ID declarado
+        /// </summary>
+        /// <param name="id">id do Cliente</param>
+        /// <returns>Cliente</returns>
+
         [HttpGet("{id}", Name = "ObterCliente")]
         public async Task<ActionResult<ClienteDTO>> ListarClientePorId(int id) 
         {
@@ -60,7 +72,7 @@ namespace clientes.Controllers
                 var cliente = await _uof.ClienteRepository.GetbyId(c => c.Id == id);
                 if(cliente is null)
                 {
-                    return BadRequest("Cliente não encontrado");
+                    return NotFound("Cliente não encontrado");
                 }
 
                 var clienteDTO = _mapper.Map<ClienteDTO>(cliente);
@@ -74,24 +86,35 @@ namespace clientes.Controllers
             }
         }
 
+        /// <summary>
+        /// Retorna todos os clientes com os logradouros cadastrados
+        /// </summary>
+        /// <returns>Clientes e Logradouros</returns>
+
         [HttpGet("logradouros")]
         public async Task<ActionResult<IEnumerable<ClienteDTO>>> GetClientesLogradouros()
         {
             try
             {
                 var clientesLogradouros = await _uof.ClienteRepository.GetClientesLogradouros();
-                if(clientesLogradouros is null)
+                if (clientesLogradouros is null)
                 {
                     return NotFound();
                 }
                 var clientesLogradourosDTO = _mapper.Map<List<ClienteDTO>>(clientesLogradouros);
                 return Ok(clientesLogradourosDTO);
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Ocorreu um erro ao tratar a sua solicitação {ex.Message}");
             }
         }
+
+        /// <summary>
+        /// Cadastra um cliente
+        /// </summary>
+        /// <param name="clienteDto">Dados do Cliente</param>
+        /// <returns>Cliente cadastrado</returns>
 
         [HttpPost]
         public async Task<ActionResult> CadastrarCliente(ClienteDTO clienteDto)
@@ -100,7 +123,7 @@ namespace clientes.Controllers
             {
                 if(clienteDto is null)
                 {
-                    return BadRequest();
+                    return BadRequest("Necessário preencher todos os campos");
                 }
 
                 var cliente = _mapper.Map<Cliente>(clienteDto);
@@ -124,6 +147,13 @@ namespace clientes.Controllers
             }
         }
 
+        /// <summary>
+        /// Atualiza um cliente cadastrado, através do seu ID
+        /// </summary>
+        /// <param name="id">Id Cliente</param>
+        /// <param name="clienteDto">Dados do cliente a serem atualizadod</param>
+        /// <returns>Cliente com dados atualizados</returns>
+
         [HttpPut("{id}")]
         public async Task<ActionResult> AtualizarCliente(int id, ClienteDTO clienteDto)
         {
@@ -146,6 +176,12 @@ namespace clientes.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Ocorreu um erro ao tratar a sua solicitação {ex.Message}");
             }
         }
+
+        /// <summary>
+        /// Deleta um cliente da base de dados, através do seu ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
 
         [HttpDelete("{id}")]
         public async Task<ActionResult<ClienteDTO>> DeletarCliente(int id)
