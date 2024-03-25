@@ -12,11 +12,12 @@ API foi criada com os métodos Http, com todos os endpoints do Http: Get, Post, 
 Para realizar todas as operações, será necessário registrar e autenticar o um novo usuário.
 
 ### ⚙️ Pré-requisitos
-* .Net Core versão 6.0
-* Entity Framework Core versão 6.0
-* Visual studio 2022, ou IDE que tenha suporte ao .Net 6.0
-* Sql Server versão 2022
-* Swagger
+* .Net Core versão 6.0 [.Net Core 6.0 Download](https://dotnet.microsoft.com/pt-br/download/dotnet/6.0)
+* Entity Framework Core versão 6.0 [Documentação](https://learn.microsoft.com/pt-br/ef/)
+* Visual studio 2022, ou IDE que tenha suporte ao .Net 6.0 [Visual Studio 2022 Download](https://visualstudio.microsoft.com/pt-br/downloads/)
+* Sql Server versão 2022 [Sql Server Download](https://www.microsoft.com/pt-br/sql-server/sql-server-downloads)
+* Sql Server Management Studio (SSMS) [SSMS Download](https://learn.microsoft.com/pt-br/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16)
+* Swagger [Documentação](https://swagger.io/)
 
 
 ### 🔨 Guia de instalação
@@ -125,6 +126,15 @@ Os campos de ID cliente,ID Logradouro e cliente ID, não são necessários
 Todos os campos são obrigatórios.
 Após a execução, a api irá retornar os dados criados. Status Code 201 Created
 ![image](https://github.com/marcostwelve/api-clientes/assets/94411600/f8029402-4aab-40c8-9aa5-327870c4ff77)
+
+Não é possível cadastrar um cliente com um e-mail que já esteja na base de dados
+Exemplo de utilização de e-mail já cadastrado;
+![image](https://github.com/marcostwelve/api-clientes/assets/94411600/71f78df0-705f-472e-a5e9-f79200a7bc95)
+
+Retorno da API;
+![image](https://github.com/marcostwelve/api-clientes/assets/94411600/940ce56f-1d7f-4085-a164-4aefb2480b6b)
+
+
 
 
 ### Método Put/id ↗️
